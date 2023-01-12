@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<!-- Indico que la página está escrita en idioma español -->
+<html lang="es">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <title>C u r r i c u l u m  V i t a e</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="imagen/favicon.png" />
+<!--Estilos de Bootstrap -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+<!--Estilos CSS Adicionales + Google Fonts @import fonts.google -->
+  <link href="css/estilos.css" rel="stylesheet">
+<!--Estilos CSS para el Formulario de Contacto -->
+  <link href="css/formulario.css" rel="stylesheet">
+<!--javascript de Bootstrap -->
+  <script src="js/bootstrap.js"></script>
+<!--Fontawesome -->
+<script src="js/fontawesome.js"></script>
+<script src="js/mi_funcion.js"></script>
+ </head>
+<body onload="myFunctionDeEdad()">
+<!-- Encabezado de la Página-->
+<div class="p-1 bg-success text-white text-center miletra1">
+  <h1>C u r r i c u l u m &nbsp; &nbsp; V i t a e</h1>
+  <h4>Proyecto Final Integrador</h4> 
+</div>
+
+<!--barra de navegación con links ancla -->
+<nav class="navbar navbar-expand-sm bg-info navbar-info miletra2">
+  <div class="container-fluid">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" href="#info"><i class='fas fa-angle-right'></i> Información Personal</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#experiencia"><i class='fas fa-angle-right'></i> Experiencia</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#habilidades"><i class='fas fa-angle-right'></i> Habilidades</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#contacto"><i class='fas fa-angle-right'></i> Contacto</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-sm-3 text-center">
+      <h3><i class='fas fa-camera'></i> Mi Imagen</h3>
+      <div class="fondoimg">
+       <img src="imagen/fotodni.jpg" alt="Mi Imagen" class="img-circle">
+      </div>
+      <p>Dan Nichols</p>
+
+      <h3 class="mt-4">Menu Principal</h3>
+      <p>Seleccione:</p>
+<!--barra de navegación con links ancla -->
+      <ul class="nav nav-pills flex-column">
+        <li class="nav-item">
+         <a class="btn btn-light" href="#info"><i class='fas fa-angle-double-right'></i> Información Personal</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-light" href="#experiencia"><i class='fas fa-angle-double-right'></i> Experiencia Laboral</a>
+        </li>
+        <li class="nav-item">
+         <a class="btn btn-light" href="#habilidades"><i class='fas fa-angle-double-right'></i> Habilidades</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-light" href="#contacto"><i class='fas fa-angle-double-right'></i> Contacto</a>
+        </li>
+      </ul>
+      <hr class="d-sm-none">
+    </div>
+    <div class="col-sm-9">
+     <div class="container mt-3">
+<button style="float: right;" onclick="myFunctionDM()">Modo Oscuro/Claro</button>
+     <h2 id="info"><i class='far fa-address-card'></i> Información Personal</h2>
+     <button type="button" class="btn btn-light" onclick='document.getElementById("misdatos").innerHTML = "Hola, Mi nombre es: Dan Nichols"'><i class='fas fa-portrait'></i> Nombre</button>
+     <button type="button" class="btn btn-secondary" onclick='document.getElementById("misdatos").innerHTML = "Mi correo electrónico es: dan.nichols@example.com"'><i class='fas fa-at'></i> Email</button>
+     <button type="button" class="btn btn-dark" onclick='document.getElementById("misdatos").innerHTML = "Mi fecha de nacimiento es: 01/02/1972"'><i class='far fa-calendar-alt'></i> Edad</button>
+     <button type="button" class="btn btn-info" onclick='document.getElementById("misdatos").innerHTML = "Mi dirección es: 4675 White Oak Dr"'><i class='far fa-building'></i> Dirección</button>
+     <button type="button" class="btn btn-success" onclick='document.getElementById("misdatos").innerHTML = "Mi numero telefónico es: (547) 704-6600"'><i class='fas fa-phone'></i> Teléfono</button>
+
+     <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"><i class='fas fa-align-justify'></i> Info Completa</button>
+<!-- Ventana Modal -->
+<div class="modal fade" id="myModal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+
+      <!-- Encabezado de la Ventana Modal -->
+      <div class="modal-header">
+        <h4 class="modal-title">Datos Personales</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Cuerpo de la Ventana Modal -->
+      <div class="modal-body">
+       Hola, mi nombre es: Dan Nichols.<br><br>
+       Correo electrónico: dan.nichols@example.com<br><br>
+       Fecha de nacimiento: 01/02/1972*<br><br>
+<script>
+function calculateEdad(cumple) {
+    var cumple_arr = cumple.split("/");
+    var cumple_date = new Date(cumple_arr[2], cumple_arr[1] - 1, cumple_arr[0]);
+    var EdadDifMs = Date.now() - cumple_date.getTime();
+    var EdadDate = new Date(EdadDifMs);
+    return Math.abs(EdadDate.getUTCFullYear() - 1970);
+    }
+var Edad = calculateEdad("01/02/1972");
+</script>
+<script>
+function myFunctionDeEdad() {
+  document.getElementById("edad").innerHTML = Edad;
+}
+</script>
+<span>Edad:</span>
+<span id="fecha">*Según cálculos hechos en JavaScript, al día de hoy:</span>
+<script>
+var f = new Date();
+document.write(f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
+</script> 
+<span id="fecha">tengo</span>
+<span id="edad"></span>
+<span id="fecha">años de edad.</span><br><br>
+
+       Dirección: 4675 White Oak Dr.<br><br>
+       Numero de contacto: (547) 704-6600.
+      </div>
+
+      <!-- Pie de la Ventana Modal -->
+      <div class="modal-footer">
+<p>Los datos personales fueron obtenidos de: <a target="_blank" href="https://randomuser.me/">Random User</a></p>
+        <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+<div id="misdatos"></div>
+     </div>
+      <h2 id="experiencia"><i class='fas fa-laptop-code'></i> Experiencia Laboral</h2>
+      <div class="fondodescripcion">
+      <img src="imagen/web.png" alt="Imagen Experiencia" class="misimagen1">
+      <h4>Desde: 1/12/2022 - Hasta Hoy: 
+<script>
+var f = new Date();
+document.write(f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear());
+</script>
+      </h4>
+      <h5><i class='fas fa-arrow-alt-circle-right'></i> Desarrollador junior.</h5>
+      <p>Recientemente incorporado a un nuevo emprendimiento tecnológico.</p>
+      <p>Dicho emprendimiento tecnológico se encuentra ubicado en la Provincia de Buenos Aires de la Republica Argentina.</p>
+<div>
+<audio controls autoplay>
+<source src="audio/experiencia_laboral.mp3" type="audio/mpeg">
+Su navegador no soporta elementos de audio.
+</audio>
+</div>
+      </div>
+
+      <h2 id="habilidades" class="mt-5"><i class='fas fa-user-graduate'></i> Habilidades</h2>
+      <h4>Conocimientos principales:</h4>
+      <div class="fondodescripcion">
+      <img src="imagen/desarrollo.jpg" alt="Imagen Habilidades" class="misimagen2">
+      <h5><i class='fas fa-arrow-alt-circle-right'></i> Conceptos Básicos del Lenguaje de Marcas de Hipertexto (del inglés HyperText Markup Language) o HTML.</h5>
+      <p>Estructura del HTML, Editores HTML, Elementos HTML, Atributos HTML, Encabezados HTML, Semántica HTML, Párrafos HTML, Estilos HTML, Comentarios HTML, Incluir Enlaces HTML, Incluir Imágenes, icono, Tablas, Listas HTML, JavaScript en HTML, Formularios HTML,  Vídeo en HTML, Audio en HTML, Elemento de bloque, Elemento de línea, y Formularios.</p>
+<div>
+<audio controls autoplay>
+<source src="audio/habilidades_html.mp3" type="audio/mpeg">
+Su navegador no soporta elementos de audio.
+</audio>
+</div>
+      <br><h5><i class='fas fa-arrow-alt-circle-right'></i> Conceptos Básicos de Hojas de Estilo en Cascada (del inglés Cascading Style Sheets) o CSS.</h5>
+      <p>Sintaxis CSS, Selectores de CSS, Comentarios en CSS, Colores en CSS, Fondos en CSS, Bordes en CSS, Márgenes en CSS, Altura/ancho con CSS, Iconos CSS, Opacidad CSS, Formularios CSS, Esquinas redondeadas con CSS, Fuentes web CSS, Ajuste de objeto con CSS, Posición del objeto CSS, Botones CSS, y Columnas con CSS.</p>
+<div>
+<audio controls autoplay>
+<source src="audio/habilidades_css.mp3" type="audio/mpeg">
+Su navegador no soporta elementos de audio.
+</audio>
+</div>
+      <br><h5><i class='fas fa-arrow-alt-circle-right'></i> Conceptos Básicos del lenguaje de programación JavaScript (JS).</h5>
+      <p>Sintaxis JavaScript, Comentarios JavaScript, Variables JavaScript, Operadores JavaScript, Aritmética JavaScript, Funciones JavaScript, Eventos JavaScript, Fechas JavaScript, Métodos de obtención de fecha JavaScript, Booleanos JavaScript, Comparaciones JavaScript, Prácticas recomendadas de JavaScript, y Palabras reservadas de JavaScript.</p>
+<div>
+<audio controls autoplay>
+<source src="audio/habilidades_js.mp3" type="audio/mpeg">
+Su navegador no soporta elementos de audio.
+</audio>
+</div>
+      </div>
+      <h2 id="contacto" class="mt-5"><i class='fas fa-phone-volume'></i> Contacto</h2>
+      <h4>Complete el formulario en línea.</h4>
+      <div class="fondodescripcion">
+      <div class="container">
+  <form action="">
+    <label for="fname">Nombre:</label>
+    <input type="text" id="fname" name="firstname" placeholder="Ingrese su Nombre...">
+    <label for="lname">Correo</label>
+    <input type="text" id="lname" name="mail" placeholder="Ingrese su correo...">
+    <label for="country">País:</label>
+    <select id="country" name="country">
+      <option value="argentina">Argentina</option>
+      <option value="chile">Chile</option>
+      <option value="uruguay">Uruguay</option>
+      <option value="brasil">Brasil</option>
+      <option value="bolivia">Bolivia</option>
+      <option value="paraguay">Paraguay</option>
+    </select>
+    <label for="subject">Mensaje</label>
+    <textarea id="subject" name="subject" placeholder="Escriba su mensaje..." style="height:200px"></textarea>
+    <button onclick="myFunctionG()">Enviar Mensaje</button>
+<script>
+function myFunctionG() {
+  alert("Su mensaje fue enviado!\n(Esto es una demo).");
+}
+</script>
+  </form>
+</div>
+</div>
+
+    </div>
+  </div>
+</div>
+
+<footer>
+<div class="mt-5 p-4 bg-dark text-white text-center">
+<h3>Agradecimientos:</h3>
+<p>Herramientas para diseño de sitios web de <a target="_blank" href="https://getbootstrap.com/">Bootstrap</a></p>
+<p>Ejemplos de códigos obtenidos de <a target="_blank" href="https://www.w3schools.com/">w3schools</a></p>
+<p>Datos personales obtenidos de <a target="_blank" href="https://randomuser.me/">Random User</a></p>
+<p>Conjunto de íconos de <a target="_blank" href="https://fontawesome.com/">Font Awesome</a></p>
+<p>Fuentes Web de <a target="_blank" href="https://fonts.google.com/">Google Fonts</a></p>
+<p>Texto a MP3 de <a target="_blank" href="https://www.texttomp3.online/">Text2mp3</a></p>
+</div>
+</footer>
+
+
+</body></html>

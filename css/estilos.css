@@ -1,0 +1,18 @@
+@import url(https://fonts.googleapis.com/css?family=Ubuntu:400);
+@import url(https://fonts.googleapis.com/css?family=Yeon+Sung:400);
+@import url(https://fonts.googleapis.com/css?family=Sevillana);
+
+/*! Mis Estilos adicionales */
+.img-circle {padding: 10px;border-radius: 50%;width: 150px;}
+.fondoimg {height: 150px;background:beige;border-radius:25%;}
+.fondodescripcion {background-color:#dee2e6;margin-top:19px;padding:10px;}
+.fas.fa-angle-double-right {font-size:20px;color:blue;}
+.misimagen1 {float:left;width:245px;height:auto;padding:10px;border-radius:25px;}
+.misimagen2 {float:right;width:245px;height:auto;padding:10px;border-radius:25px;}
+.darkmode {background-color:#555555;color:#2f9f25;}
+.miletra1 {font-family:Ubuntu,sans-serif;}
+.miletra2 {font-family:Yeon Sung,sans-serif;}
+#misdatos{color:#64a9ee;font-family:Sevillana,sans-serif;font-size:30px;padding:20px;}
+
+
+
